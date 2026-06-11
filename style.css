@@ -1,4 +1,8 @@
-body{
+/* =========================================
+   GLOBÁLIS BEÁLLÍTÁSOK ÉS FŐOLDAL (index.html)
+   ========================================= */
+
+body {
     background-color: #0b0c10;
     color: #c5c6c7;
     font-family: 'Roboto', sans-serif;
@@ -10,11 +14,14 @@ body{
     align-items: center;
 }
 
-h1, h2, .taralom, table, iframe{
+/* Az oldalon lévő fő elemek maximális szélessége */
+h1, h2, .tartalom-blokk, table, iframe {
     max-width: 900px;
     width: 100%;
 }
-h1{
+
+/* Főcím: Vissza a jövőbe stílus (Sárga-Narancs izzás) */
+h1 {
     font-family: 'Orbitron', sans-serif;
     color: #ffcc00;
     text-transform: uppercase;
@@ -22,22 +29,215 @@ h1{
     font-size: 3rem;
     letter-spacing: 3px;
     margin-bottom: 30px;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff6600, 0 0 40px #ff0000;
 }
 
-.taralom{
+/* Alcímek: Neon ciánkék */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #66fcf1;
+    border-bottom: 2px solid #45a29e;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px #66fcf1;
+}
+
+/* Flexbox elrendezés a szövegnek és a képnek a főoldalon */
+.tartalom-blokk {
     display: flex;
     gap: 30px;
     align-items: center;
 }
-p{
+
+/* Bekezdés (szöveg) formázása */
+p {
     font-size: 1.1rem;
     text-align: justify;
     background: rgba(31, 40, 51, 0.6);
     padding: 25px;
     border-left: 4px solid #66fcf1;
     border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     margin: 0;
     flex: 1;
+}
+
+/* Kép formázása (Plakát) */
+img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(102, 252, 241, 0.8);
+}
+
+/* Táblázat stílusa */
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1f2833;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #45a29e;
+}
+
+th {
+    background-color: #45a29e;
+    color: #0b0c10;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: rgba(102, 252, 241, 0.1);
+    color: #66fcf1;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Videó beágyazás reszponzívvá tétele */
+iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 2px solid #45a29e;
+    box-shadow: 0 0 20px rgba(69, 162, 158, 0.5);
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+
+/* =========================================
+   NAVIGÁCIÓS GOMB (Mindkét oldalhoz)
+   ========================================= */
+
+.menü-gomb {
+    display: inline-block;
+    background-color: transparent;
+    color: #66fcf1;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    border: 2px solid #66fcf1;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menü-gomb:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 20px #66fcf1;
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   KVÍZ OLDAL (kviz.html)
+   ========================================= */
+
+#quiz-container {
+    background-color: #1f2833;
+    color: #c5c6c7;
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    box-sizing: border-box; /* Hogy a padding ne növelje meg a szélességet mobilon */
+}
+
+#question {
+    color: #66fcf1;
+    margin-bottom: 20px;
+    border: none;
+    text-shadow: none;
+    padding: 0;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: #c5c6c7;
+    border: 2px solid #45a29e;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+    background-color: rgba(69, 162, 158, 0.2);
+}
+
+/* Színek a helyes és helytelen válaszokhoz */
+.option-btn.correct {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.option-btn.wrong {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+#next-btn, #restart-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #ffcc00;
+    color: #0b0c10;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#next-btn:hover, #restart-btn:hover {
+    background-color: #e6b800;
+}
+
+
+/* =========================================
+   MOBIL NÉZET (Reszponzivitás)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .tartalom-blokk {
+        flex-direction: column;
+    }
+    img {
+        max-width: 300px;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
 }
