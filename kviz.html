@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <title>Kvíz - Vissza a jövőbe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Időutazó Kvíz</h1>
+
+<div style="text-align: center; margin-bottom: 20px;">
+    <a href="index.html" class="menü-gomb" style="font-size: 0.9rem; padding: 10px 20px;">Vissza a főoldalra</a>
+</div>
+
+<div id="quiz-container">
+    <div id="quiz-header">
+        <h2 id="question">A kérdés ide fog kerülni</h2>
+    </div>
+    <div id="options-container">
+    </div>
+    <button id="next-btn" style="display: none;">Következő kérdés</button>
+    <div id="result-container" style="display: none;">
+        <h2 id="result-text">Eredmény</h2>
+        <button id="restart-btn" onclick="startQuiz()">Újraindítás</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
