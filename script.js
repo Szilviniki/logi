@@ -1,4 +1,3 @@
-// Kérdések és válaszok
 const quizData = [
     {
         question: "Melyik évbe utazik vissza Marty McFly az első filmben?",
